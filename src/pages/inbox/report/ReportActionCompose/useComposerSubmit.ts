@@ -23,6 +23,7 @@ import type * as OnyxTypes from '@src/types/onyx';
 import {useComposerActions, useComposerEditActions, useComposerEditState, useComposerMeta, useComposerSendState} from './ComposerContext';
 import useComposerReportData from './useComposerReportData';
 import useSidePanelContext from './useSidePanelContext';
+import {saveReportDraftComment} from '@libs/actions/Report';
 
 function useComposerSubmit(reportID: string) {
     const currentUserPersonalDetails = useCurrentUserPersonalDetails();
@@ -154,6 +155,8 @@ function useComposerSubmit(reportID: string) {
             reportActionID: optimisticReportActionID,
             delegateAccountID,
         });
+         saveReportDraftComment(reportID, null);
+        
     };
 
     const submitDraftAndClearComposer = () => {
