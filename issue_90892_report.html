@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Issue #90892 - Invoice Bank icon is cropped</title>
+  <style>
+    @page { margin: 24mm 18mm; }
+    body { font-family: -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; color: #1a1a1a; line-height: 1.6; margin: 0; }
+    h1 { border-bottom: 3px solid #03d47c; padding-bottom: 8px; font-size: 24px; }
+    .meta { background: #f7f7f7; border-radius: 8px; padding: 16px 20px; margin: 20px 0; font-size: 14px; }
+    .meta div { margin: 6px 0; }
+    .label { font-weight: 600; display: inline-block; min-width: 165px; vertical-align: top; }
+    h2 { margin-top: 28px; color: #03533d; font-size: 18px; }
+    ol { padding-left: 22px; }
+    li { margin: 4px 0; }
+    .expected { background: #e9f9f0; border-left: 4px solid #03d47c; padding: 12px 16px; border-radius: 4px; }
+    .actual { background: #fdecec; border-left: 4px solid #e02020; padding: 12px 16px; border-radius: 4px; }
+    a { color: #0b6bcb; text-decoration: none; }
+    code { background: #eee; padding: 2px 6px; border-radius: 4px; font-size: 13px; }
+    .footer { margin-top: 36px; font-size: 12px; color: #888; border-top: 1px solid #ddd; padding-top: 10px; }
+  </style>
+</head>
+<body>
+  <h1>Invoice &ndash; Bank icon is cropped</h1>
+
+  <div class="meta">
+    <div><span class="label">Issue URL:</span> <a href="https://github.com/Expensify/App/issues/90892">github.com/Expensify/App/issues/90892</a></div>
+    <div><span class="label">GitHub Repo URL:</span> <a href="https://github.com/Expensify/App">github.com/Expensify/App</a></div>
+    <div><span class="label">Environment:</span> Reproducible in Production &amp; Staging</div>
+    <div><span class="label">Platform(s):</span> Windows: Chrome</div>
+    <div><span class="label">Version Number:</span> <code>v9.3.75-0</code></div>
+  </div>
+
+  <h2>Action Performed</h2>
+  <ol>
+    <li>Start with a workspace that has Invoice enabled and a receiver with a personal/business account added</li>
+    <li>Send a USD invoice to the receiver</li>
+    <li>As the receiver, open the invoice room</li>
+    <li>Click the &ldquo;Mark as paid&rdquo; dropdown button on the invoice preview</li>
+    <li>Select either &ldquo;Pay as an individual&rdquo; or &ldquo;Pay as a business&rdquo;</li>
+  </ol>
+
+  <h2>Expected Result</h2>
+  <p class="expected">The bank icon is square and fully visible (bank name not cropped).</p>
+
+  <h2>Actual Result</h2>
+  <p class="actual">The bank icon is squeezed/distorted and the bank name is cropped.</p>
+
+  <div class="footer">
+    Labels: MonthlyKSv2, Not a priority &nbsp;&bull;&nbsp; Reported by: Applause Internal Team (Regression TC execution) &nbsp;&bull;&nbsp; Status: Open
+  </div>
+</body>
+</html>
